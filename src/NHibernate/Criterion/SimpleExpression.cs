@@ -175,7 +175,7 @@ namespace NHibernate.Criterion
 
 		string ValueToStrings()
 		{
-			if(value!=null && value.GetType().IsPrimitive)
+			if(value!=null && (value.GetType().IsPrimitive || value is string))
 			{
 				return value.ToString();
 			}
